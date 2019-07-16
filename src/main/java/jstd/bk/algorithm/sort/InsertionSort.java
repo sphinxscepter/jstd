@@ -6,14 +6,22 @@ public class InsertionSort {
 		int[] ints = new int[] {4,2,8,9,5,7,6,1,3};
 		Commons.display(ints);
 		int intsLen = ints.length;
-		int[] newInts = new int[intsLen];
 		for(int i = 0; i < intsLen; i++) {
-			if(i == 0) {
-				newInts[intsLen - 1] = ints[0];
-			} else {
-				
+			int tmp = ints[i];
+			int j = i;
+			while(j > 0 && tmp < ints[j - 1]) {
+				ints[j] = ints[j - 1];
+				j--;
 			}
+//			for(; j > 0; j--) {
+//				if(tmp < ints[j - 1]) {
+//					ints[j] = ints[j - 1];
+//				}
+//			}
+			ints[j] = tmp;
+			Commons.display(ints);
 		}
+		Commons.display(ints);
 	}
 
 }
